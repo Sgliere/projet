@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @town.name %>
+</p>
+
+<p>
+ <strong>Latitude:</strong>
+  <%= @town.latitude %>
+</p>
+
+<p>
+ <strong>Longitude:</strong>
+  <%= @town.longitude %>
+</p>
+<p>
+ <strong>Today weather :</strong>
+  <%= @weatherSummary %>
+</p>
+
+<p>
+ <strong>Today temperature :</strong>
+  <%= @weatherTemperature%>
+</p>
+
+<%= link_to 'Edit', edit_town_path(@town) %> |
+<%= link_to 'Back', towns_path %>

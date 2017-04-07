@@ -15,6 +15,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
+# gem 'nominatim'
+gem 'nominatim', '~>0.0.6'
+#debugger
+gem 'vcr', '~> 3.0', '>= 3.0.3',    group: :test
+#forecat_io meteo gestion
+gem 'forecast_io', '~> 2.0', '>= 2.0.1'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
