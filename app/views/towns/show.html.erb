@@ -21,7 +21,7 @@
 
 <p>
  <strong>Today temperature :</strong>
-  <%= @weatherTemperature%>
+  <%= '%.2f' % @weatherTemperature %> &deg;C
 </p>
 
 <%= link_to 'Edit', edit_town_path(@town) %> |
