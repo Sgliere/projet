@@ -1,14 +1,6 @@
 class TownsController < ApplicationController
   before_action :set_town, only: [:show, :edit, :update, :destroy]
   
-      
-    def toCelsus(fTemp)
-      if fTemp
-        return (fTemp - 32.0) * 5.0 / 9.0
-      else
-        return nil
-      end
-    end
 
   # GET /towns
   # GET /towns.json
@@ -19,28 +11,14 @@ class TownsController < ApplicationController
   # GET /towns/1
   # GET /towns/1.json
   def show
-    forecast = ForecastIO.forecast(@town.latitude, @town.longitude)
-     weatherOk = false
-     temperatureOk = false
-     if forecast
-       todayForecast = forecast.currently
-       if todayForecast
-         if todayForecast.summary
-           @weatherSummary = todayForecast.summary
-           weatherOk = true
-         end
-         if todayForecast.temperature
-           @weatherTemperature = toCelsus(todayForecast.temperature)
-           temperatureOk = true
-         end
-       end
-     end
-     if !weatherOk
-       @weatherSummary = "Unavailable"
-     end
-     if !temperatureOk
-       @weatherTemperature = "Unavailable"
-     end
+    if false
+      @weatherSummary=@town.getWeather
+      @weatherTemperature=@town.getTemperature
+    else
+      res=@town.getForecastweather
+      @weatherSummary=res['weather']
+      @weatherTemperature=res['temperature']
+    end
     
   end
 
